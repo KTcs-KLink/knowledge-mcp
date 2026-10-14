@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/KTcs-KLink/knowledge-mcp/schemas/chunk.schema.json",
+  "title": "Knowledge Chunk",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "source_id",
+    "chunk_index",
+    "text",
+    "source_uri",
+    "chunker_version"
+  ],
+  "properties": {
+    "chunk_id": {"type": "string", "pattern": "^SRC-[0-9]{4}-[0-9]{4,}$"},
+    "source_id": {"type": "string", "pattern": "^SRC-[0-9]{4}$"},
+    "chunk_index": {"type": "integer", "minimum": 0},
+    "text": {"type": "string", "minLength": 1},
+    "page_start": {"type": ["integer", "null"], "minimum": 1},
+    "page_end": {"type": ["integer", "null"], "minimum": 1},
+    "section": {"type": "string"},
+    "source_uri": {"type": "string", "minLength": 1},
+    "chunker_version": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}
