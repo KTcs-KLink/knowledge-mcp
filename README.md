@@ -1,8 +1,8 @@
 # Knowledge MCP
 
-KTcs 업무지식의 출처와 허용된 데이터를 관리하고, 향후 검색 기능을 MCP 도구로 제공하기 위한 프로젝트입니다. 사용자용 화면은 [`ai-assistant`](https://github.com/KTcs-KLink/ai-assistant) 저장소에서 개발합니다.
+Assistant가 사용할 지식 데이터의 출처와 이용 조건을 관리하고, 검색 기능을 MCP Server 도구로 제공하는 프로젝트입니다. 사용자 화면과 Assistant 서버·오케스트레이터 및 MCP Client는 [`ai-assistant`](https://github.com/KTcs-KLink/ai-assistant) 저장소에서 개발합니다.
 
-> KTcs 제공 데이터는 아직 없습니다. 내부 자료를 받기 전에는 공개 자료 중 이용·재배포 조건이 확인된 자료만 사용합니다. 출처나 이용 조건이 불명확한 자료의 원문과 추출 텍스트는 저장소에 올리지 않습니다.
+> 출처나 이용 조건이 불명확한 자료의 원문과 추출 텍스트는 저장소에 올리지 않습니다.
 
 ## 목표와 범위
 
@@ -18,7 +18,7 @@ KTcs 업무지식의 출처와 허용된 데이터를 관리하고, 향후 검�
 | 저장소 | 담당 |
 | --- | --- |
 | `knowledge-mcp` | 데이터 출처와 청크, 처리 파이프라인, 검색 및 MCP 기능 |
-| [`ai-assistant`](https://github.com/KTcs-KLink/ai-assistant) | 사용자 질문·답변 화면 및 API 연동 |
+| [`ai-assistant`](https://github.com/KTcs-KLink/ai-assistant) | 사용자 화면, Assistant 서버·오케스트레이터, 모델 연동, MCP Client |
 | [`.github`](https://github.com/KTcs-KLink/.github) | 조직 공통 협업 규칙과 템플릿 |
 
 ## 폴더 구조
@@ -54,7 +54,7 @@ docs/adr/        주요 설계 결정 기록
 
 ## 연동 원칙
 
-- MCP 도구의 이름, 입력·출력, 오류 응답은 client 담당자와 합의해 문서화합니다.
+- MCP 도구의 이름, 입력·출력, 오류 응답은 Assistant 서버의 MCP Client 담당자와 합의해 문서화합니다.
 - 검색 결과에는 가능한 범위에서 `source_id`, 문서 제목, 위치와 출처 URI를 포함해 근거를 추적할 수 있게 합니다.
 - 데이터가 없거나 검색 결과가 없으면 빈 근거를 임의의 답변으로 대체하지 않고 결과 없음을 명확히 전달합니다.
 - 민감정보와 승인되지 않은 KTcs 내부 자료를 저장소, 로그, 테스트 fixture에 포함하지 않습니다.
