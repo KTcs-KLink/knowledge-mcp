@@ -17,3 +17,8 @@ data/vectorstore/
 .DS_Store
 .idea/
 .vscode/
+
+# Local source documents
+data/raw/
+
+data/parsed/run_summary.md
